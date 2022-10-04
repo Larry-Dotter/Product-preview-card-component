@@ -1,0 +1,206 @@
+@import url("https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,700&family=Montserrat:wght@500;700&display=swap");
+
+/* 
+font-family: 'Fraunces', serif;
+font-family: 'Montserrat', sans-serif;
+
+ */
+
+* {
+  /* Removes the default margin & padding  */
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Montserrat", sans-serif;
+  background-color: hsl(30, 38%, 92%);
+  font-size: 14px;
+  min-height: 100vh;
+  display: flex;
+  /* for align the card properly */
+  justify-content: center;
+  align-items: center;
+}
+
+.attribution{
+  position: relative;
+  top: 300px; 
+  left: -680px;
+}
+
+.container {
+  margin: 30px auto;
+  /* margin create a gap for top and buttom, auto will center (left & right) the image */
+  padding: 0 30px;
+  /* this line is for small Displays for top & button = 0, for left & right 30px  */
+}
+
+.grid {
+  /* contains the entire card; it gets divided into 2 different columns or fractions (fr) */
+  max-width: 700px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  background-color: #FFF;
+  border-radius: 15px;
+  /* this rounds the corners */
+  overflow: hidden;
+}
+
+.img img {
+  max-width: 100%;
+  display: inherit;
+  /* closes the little gap between img and right colume */
+}
+
+.card-content {
+  padding: 35px;
+  /* schafft einen Rand zu allen Seiten */
+  display: flex;
+  /* Text will show up in a row now (Standart) */
+  flex-direction: column;
+  /* This will change it from row to column */
+  justify-content: space-between;
+  /* This will create the same amount space between each element */
+}
+
+h6.product-category {
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  font-size: 13px;
+  color: hsl(228, 12%, 48%);
+  font-weight: 500;
+
+}
+
+h2.product-name {
+  font-family: 'Fraunces', serif;
+  font-size: 34px;
+  line-height: 1em;
+  color: hsl(212, 21%, 14%);
+}
+
+p.product-description {
+  color: hsl(228, 12%, 48%);
+  line-height: 1.6em;
+}
+
+p.current-price {
+  font-family: 'Fraunces', serif;
+  color: hsl(158, 36%, 37%);
+  font-size: 25px;
+  padding-right: 25px;
+}
+
+p.regular-price {
+  color: hsl(228, 12%, 48%);
+  text-decoration: line-through;
+}
+
+.price {
+  display: flex;
+  /* actives the flex, so the two prices are next to eachother */
+  align-items: center;
+  /* makes both prices show on the same line / high */
+  padding-right: 25px;
+  /* creates a space between the two prices */
+}
+
+button.cta {
+  background-color: hsl(158, 36%, 37%);
+  border: none;
+  /* deletes the standart bolder on the green button */
+  padding: 14px 0;
+  /* creates a padding with 12px for top & buttom and 0 for left and right */
+  border-radius: 12px;
+  color: white;
+  font-size: 14px;
+  font-weight: 700;
+  cursor: pointer;
+  /* changes the cursor when hover over the button */
+  transition: background-color 0.5s ease;
+  /* background color changes back in 0.3s */
+  width: 100%;
+  /* fixes the unwanted inline element effect (button gets small) */
+
+}
+
+button.cta:hover {
+  background-color: hsl(158, 36%, 23%);
+}
+
+button.cta img {
+  padding-right: 7px;
+}
+
+@media only screen and (max-width: 628px) {
+  /* the following stuff makes the card responsive */
+
+  /* smaller resultion for smaller displays */
+  .grid {
+    grid-template-columns: 1fr;
+    /* this will change the two to one column  */
+  }
+
+  .img img {
+    /* for smaller img and more place for the text */
+    max-height: 450px;
+    width: 100%;
+    object-fit: cover;
+  }
+
+  .card-content {
+    display: block;
+    /* creates an unwanted inline effect */
+  }
+
+  h6.product-category,
+  h2.product-name,
+  p.product-description,
+  .price {
+    padding-bottom: 23px;
+    /* creates a gap between these elements */
+  }
+
+}
+
+
+@media only screen and (max-width: 375px) {
+
+  /* the following stuff makes the card responsive - for even smaller displays */
+  .container {
+    margin: 15px auto;
+    /* 15px for top & button, 0 for left & right..or better - because safer use auto */
+    padding: 0 15px;
+  }
+
+  .img img {
+    max-height: 290px;
+  }
+
+  .card-content {
+    padding: 24px;
+    /* this reduces the gap arround it */
+  }
+
+  h6.product-category,
+  h2.product-name,
+  p.product-description,
+  .price {
+    padding-bottom: 16px;
+    /* creates a gap between these elements */
+  }
+  h2.product-name{
+    font-size: 28px;
+  }
+  p.product-description{
+font-size: 12px;
+  }
+p.current-price{
+font-size: 23px;
+}
+button.cta{
+  padding: 12px 0;
+  font-size: 13px;
+}
